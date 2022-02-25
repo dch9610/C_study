@@ -4,13 +4,14 @@ using namespace std;
 
 class A {
 public:
-	void show() {
+	// 가상함수 virtual 사용
+	virtual void show() {
 		cout << "A클래스 입니다" << endl;
 	}
 };
 
 class B :public A {
-	void show() {
+	virtual void show() {
 		cout << "B클래스 입니다" << endl;
 	}
 };
@@ -22,5 +23,5 @@ int main(void) {
 	p = &a;
 	p->show();
 	p = &b;
-	p->show(); // 여전히 A 클래스의 show() 함수를 호출
+	p->show(); 
 }
