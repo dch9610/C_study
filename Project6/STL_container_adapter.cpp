@@ -1,13 +1,13 @@
 #include <iostream>
-#include <stack>
+#include <queue>
 
 using namespace std;
 
 int main(void) {
-	stack<int> s;
+	queue<int> s;
 	s.push(7); s.push(5); s.push(4); s.pop(); s.push(6); s.pop();
 	while (!s.empty()) {
-		cout << s.top() << " ";
+		cout << s.front() << " ";
 		s.pop();
 	}
 }
