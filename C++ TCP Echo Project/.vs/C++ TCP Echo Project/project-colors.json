@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "40e95ccb-8969-46e5-b083-e37059b35676": {
+      "ProjectGuid": "40e95ccb-8969-46e5-b083-e37059b35676",
+      "DisplayName": "Client",
+      "ColorIndex": 0
+    },
+    "faa8221d-30e2-4d21-a801-9d488fabe66c": {
+      "ProjectGuid": "faa8221d-30e2-4d21-a801-9d488fabe66c",
+      "DisplayName": "Server",
+      "ColorIndex": 1
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "기타 파일",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 2
+}
