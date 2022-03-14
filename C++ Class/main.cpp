@@ -1,20 +1,27 @@
 #include <iostream>
 #include <memory>
+#include <string>
+#include <tuple>
 using namespace std;
 
-void cal(int *a, int *b){
-    int sum = (*a) + (*b);
-    int sub = (*a) - (*b);
-    *a = sum;
-    *b = sub;
+typedef tuple <string, int> tuple1;
+
+auto sum(int a, int b){
+    return tuple1{"sum: ",a+b};
 }
 
-int main(){
-    unique_ptr<int> a = unique_ptr<int> {new int{}};
-    unique_ptr<int> b {new int {}};
+int main() {
+    auto pa = make_unique<int>(1);
+    auto pb = make_unique<int>(2);
 
-    cin >> *a >> *b;
-    cal(a.get(),b.get());
-    cout << *a << endl;
-    cout << *b << endl;
+    cout << *pa << ", " << *pb << endl;
+    auto my_swap = [](auto a, auto b) {
+        auto temp = *a;
+        *a = *b;
+        *b = temp;
+    };
+    my_swap(pa.get(), pb.get());
+    cout << "a:" << *pa << ",b:" << *pb << endl;
+    auto [label, result] = sum(*pa, *pb);
+    cout << label << result << endl;
 }
