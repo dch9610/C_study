@@ -7,30 +7,13 @@
 using namespace std;
 
 int main(){
-    cout << "input size. " << endl;
-    int intSize;
-    cin >> intSize;
-
-    // vector 정의
-    vector<int> vInt(intSize);  // intSize 크기의 int 타입 vector의 생성
-    for(unsigned int i = 0; i<vInt.size(); i++){ // int의 기본값인 0으로 초기화
-        vInt[i] = i;               // [] 연산자를 이용한 원소의 접근
-        cout << vInt.at(i) << "\t"; // at() 함수를 원소의 접근
-   }
-    cout << endl;
-
-    // 배열을 이용하여 vector의 생성 및 초기화
-    int intA[3] = {10,20,30};
-
-    // 크기 3인 int vector를 {10, 20, 30}으로 초기화
-    vector<int> vInt2(intA, intA+3);
-    for(unsigned int i=0; i<vInt2.size(); i++){
-        cout<<vInt2.at(i) << "\t";
+    vector<int> vInt(5); //int 타입의 크기 5의 vector 정의
+    for(vector<int> ::iterator it = vInt.begin(); it!=vInt.end(); ++it){
+        *it=20;
+        cout << *it <<"\t"; // 20 20 20 20 20
+        cout << *it <<"\t"; //
+        //const_iterator인 경우 *it의 값을 변경할 수 없다
     }
     cout << endl;
-    cout<< vInt.size() << " " << vInt.capacity() << endl;
-    // 크기 조정
-    vInt.resize(3);
-    vInt.shrink_to_fit(); // size와 capacity를 맞춰줌
 
 }
