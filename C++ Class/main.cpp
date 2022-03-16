@@ -1,19 +1,32 @@
-// vector
-// 동적 배열을 캡슐화한 순차 컨테이너
-// 메모리에서 원소들을 연속해서 저장
-
 #include <iostream>
+#include <algorithm>
 #include <vector>
 using namespace std;
 
 int main(){
-    vector<int> vInt(5); //int 타입의 크기 5의 vector 정의
-    for(vector<int> ::iterator it = vInt.begin(); it!=vInt.end(); ++it){
-        *it=20;
-        cout << *it <<"\t"; // 20 20 20 20 20
-        cout << *it <<"\t"; //
-        //const_iterator인 경우 *it의 값을 변경할 수 없다
+    vector<int> vInt{1,2,3,4,5};
+
+    random_shuffle(vInt.begin(), vInt.end());
+    for(const int& v:vInt){
+        cout << v << "\t";
     }
     cout << endl;
+
+    auto largest = max_element(vInt.cbegin(), vInt.cend()-1);
+    cout << "max_: " << *largest << endl;
+    cout << "loaction_: " << largest -vInt.cbegin() << endl;
+
+    sort(vInt.begin(), vInt.end());
+
+    // auto의 경우 const를 위해서 cbegin(), cend()를 사용함
+    for(auto it=vInt.cbegin(); it!=vInt.cend(); it++){
+        cout << *it << "\t";
+    }
+    cout <<endl;
+
+    auto largest1 = max_element(vInt.cbegin(), vInt.cend());
+    cout << "max_: " << *largest1 << endl;
+    cout << "loaction_: " << largest1 -vInt.cbegin() << endl;
+
 
 }
