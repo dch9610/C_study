@@ -4,6 +4,8 @@
 // 전체 원소를 나누는데에 평균적으로 log N번이 소요되므로 O(N logN)의 시간복잡도를 가짐
 
 // 원소를 절반씩 나눌떄 log N의 시간 복잡도가 나오는 완전 이진트리입니다.
+// 실제로 직접 구현하지는 않는다.
+// Algorithm 라이브러리의 sort() 함수는 퀵정렬을 기반으로 하여 O(N log N)을 보장
 
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
